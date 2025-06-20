@@ -22,7 +22,7 @@ st.markdown("""
 
 # Teams and Cities
 teams = [
-    'Sunrisers Hyderabad', 'Mumbai Indians', 'Royal Challengers Bengaluru',
+    'Sunrisers Hyderabad', 'Mumbai Indians', 'Royal Challengers Bangalore',
     'Kolkata Knight Riders', 'Punjab Kings', 'Chennai Super Kings',
     'Rajasthan Royals', 'Delhi Capitals'
 ]
