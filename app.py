@@ -71,22 +71,26 @@ if st.button("🔮 Predict Win Probability"):
     crr = score / overs if overs > 0 else 0
     rrr = (runs_left * 6 / balls_left) if balls_left > 0 else 0
 
-    input_df = pd.DataFrame({
-        'batting_team': [batting_team],
-        'bowling_team': [bowling_team],
-        'city': [selected_city],
-        'runs_left': [runs_left],
-        'balls_left': [balls_left],
-        'wickets': [wickets_left],
-        'total_runs_x': [target],
-        'crr': [crr],
-        'rrr': [rrr]
-    })
+    if score == target:
+        win_percent = 100
+        lose_percent = 0
+    else:
+        input_df = pd.DataFrame({
+            'batting_team': [batting_team],
+            'bowling_team': [bowling_team],
+            'city': [selected_city],
+            'runs_left': [runs_left],
+            'balls_left': [balls_left],
+            'wickets': [wickets_left],
+            'total_runs_x': [target],
+            'crr': [crr],
+            'rrr': [rrr]
+        })
 
-    # Predict
-    result = pipe.predict_proba(input_df)
-    win_percent = round(result[0][1] * 100)
-    lose_percent = 100 - win_percent
+        # Predict
+        result = pipe.predict_proba(input_df)
+        win_percent = round(result[0][1] * 100)
+        lose_percent = 100 - win_percent
 
     # Display Results
     st.markdown("## 🏆 Prediction Result")
