@@ -6,7 +6,8 @@ import pickle
 import matplotlib.pyplot as plt
 
 # Load the trained pipeline
-pipe = pickle.load(open('pipe.pkl', 'rb'))
+pipe = pickle.load(
+    open('pipe.pkl', 'rb'))
 
 # Set up the page
 st.set_page_config(page_title="IPL Predictor", layout="wide")
