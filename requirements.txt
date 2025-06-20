@@ -3,5 +3,5 @@ pandas
 numpy
 scikit-learn
 matplotlib
-pickle
 seaborn
+python = "^3.10"
